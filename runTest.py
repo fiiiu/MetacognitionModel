@@ -20,6 +20,7 @@ for i in range(n_subs):
 print model_means, data_means
 
 plt.plot(data_means, model_means, 'ks')
-
-plt.hist(model.trace('theta_0')[:])
 plt.show()
+
+# plt.hist(model.trace('theta_0')[:])
+# plt.show()
