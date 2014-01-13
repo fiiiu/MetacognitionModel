@@ -15,12 +15,14 @@ model_means=np.empty(n_subs, dtype=float)
 
 for i in range(n_subs):
     data_means[i]=np.mean(testBernoulliModel.data[i])
+    #model_means[i]=np.mean(model.trace('theta_{0}'.format(i))[:])
     model_means[i]=np.mean(model.trace('theta_{0}'.format(i))[:])
-    
-print model_means, data_means
 
-plt.plot(data_means, model_means, 'ks')
-plt.show()
+ 
+#print model_means, data_means
 
-# plt.hist(model.trace('theta_0')[:])
+# plt.plot(data_means, model_means, 'ks')
 # plt.show()
+
+plt.hist(model.trace('theta_0')[:])
+plt.show()
