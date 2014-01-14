@@ -133,20 +133,22 @@ class DataParser():
 
     def church_print_performace(self, trial_type, n_subs, n_trials):
         perfo=self.get_performance(trial_type)
-        bigstring=''
+        bigstring='('
         for i in range(n_subs):
-            bigstring+='\'('
+            #bigstring+='\'('
             for j in range(n_trials):
                 bigstring+=str(perfo[i,j])+' '
-            bigstring+=') '
+            #bigstring+=') '
+        bigstring+=') '
         print bigstring
 
     def church_print_stimuli(self, circle_num, trial_type, n_subs, n_trials):
         scales=self.get_scale(trial_type)
-        bigstring=''
+        bigstring='('
         for i in range(n_subs):
-            bigstring+='\'('
+            #bigstring+='\'('
             for j in range(n_trials):
-                bigstring+=str(parameters.get_sizes(scales[i,j])[circle_num])+' '
-            bigstring+=') '
+                bigstring+=str(float(parameters.get_sizes(scales[i,j])[circle_num])/100)+' '
+            #bigstring+=') '
+        bigstring+=') '
         print bigstring
